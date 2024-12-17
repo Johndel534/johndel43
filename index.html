@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style1.css">
+        <title>Log in page</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="form-wrapper sign-in">
+                <form action="" method="POST" id="login-form">
+                    <h2>Log in</h2>
+
+                    <!-- Username input -->
+                    <div class="input-group">
+                        <input type="text" id="username" required>
+                        <label for="username">Username</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="input-group">
+                        <input type="password" id="password" required>
+                        <label for="password">Password</label>
+                    </div>
+
+                    <!-- Remember me checkbox -->
+                    <div class="remember">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Remember me
+                        </label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // Login function
+            function Login(event) {
+                event.preventDefault();  // Prevent the default form submission
+
+                // Get the username and password values
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const rememberMe = document.getElementById("remember-me").checked;
+
+                
+
+                // For demonstration purposes, log the values to the console
+                console.log("Username: " + username);
+                console.log("Password: " + password);
+                console.log("Remember Me: " + (rememberMe ? "Yes" : "No"));
+
+                // Updated authentication logic
+                if (username === "johndel" && password === "johndel123") {
+                    alert("Login successful!");
+                    // Redirect to homepage.html
+                    window.location.href = "home page.html";  // Example redirect
+                } else {
+                    alert("Invalid username or password.");
+                }
+            }
+
+            // Add event listener to the form to trigger the login function
+            document.getElementById("login-form").addEventListener("submit", Login);
+        </script>
+    </body>
+</html>
